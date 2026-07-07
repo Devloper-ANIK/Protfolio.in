@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anik Pal</title>
+  <meta name="description" content="Anik Pal — Frontend Developer and UI Engineer crafting clean, performant, and thoughtfully designed digital products." />
+  <meta name="theme-color" content="#050816" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:," />
+
+  <!-- Preconnect for font performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Google Fonts: General Sans (display) + Inter (body) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <!-- General Sans via Fontshare (Google Fonts does not host it) -->
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@500,600,700,800,1&display=swap" rel="stylesheet" />
+
+    <link rel="icon" type="image/png" href="assets/images/11.JPEG">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- CUSTOM CURSOR (built in a later pass with Skills/Contact sections) -->
+  <div class="cursor" aria-hidden="true">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+  </div>
+
+  <!-- ====== LUXURY LOADER ====== -->
+<div class="loader" id="loader">
+  <div class="loader-content">
+    <div class="loader-photo-wrapper">
+      <div class="loader-photo-ring"></div>
+      <div class="loader-photo-glow"></div>
+      <img
+        class="loader-photo"
+        src="assets/images/11.JPEG"
+        alt="Anik Pal"
+        loading="eager"
+      />
+    </div>
+
+    <div class="loader-mark">ANIK PAL</div>
+
+    <div class="loader-bar">
+      <span class="loader-bar-fill"></span>
+    </div>
+
+  </div>
+</div>
+<!-- ====== END LOADER ====== -->
+
+  <!-- SCROLL PROGRESS BAR -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- NAVBAR (placeholder — full build comes with later sections) -->
+  <header class="navbar" id="navbar">
+    <div class="navbar-inner">
+      <a href="#hero" class="logo-mark">
+        <img src="assets/images/11.JPEG" alt="Anik Pal Logo">
+        </a>
+
+      <nav class="navbar-links" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a href="#contact" class="navbar-cta">
+        <span>Let's talk</span>
+      </a>
+
+      <button class="navbar-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile menu panel + backdrop (toggled via body.nav-open) -->
+    <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="btn btn-primary mobile-menu-cta">
+        <span>Let's talk</span>
+      </a>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!--HERO -->
+    <section class="hero" id="hero">
+
+      <!-- Ambient background layers -->
+      <div class="hero-bg" aria-hidden="true">
+        <div class="aurora aurora-1"></div>
+        <div class="aurora aurora-2"></div>
+        <div class="aurora aurora-3"></div>
+        <div class="grain"></div>
+        <div class="hero-spotlight" id="heroSpotlight"></div>
+        <svg class="hero-grid" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="grid-pattern" width="56" height="56" patternUnits="userSpaceOnUse">
+              <path d="M 56 0 L 0 0 0 56" fill="none" stroke="rgba(255,255,255,0.045)" stroke-width="1"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#grid-pattern)" />
+        </svg>
+      </div>
+
+      <div class="hero-inner">
+
+        <!-- Left column: identity + copy + actions -->
+        <div class="hero-main">
+
+          <p class="hero-eyebrow" data-reveal="fade-up">
+            <span class="eyebrow-dot" aria-hidden="true"></span>
+            Frontend Developer &amp; UI Engineer
+          </p>
+
+          <h1 class="hero-title">
+            <span class="title-line" data-reveal="split-chars">Anik Pal </span>
+            <span class="title-line title-line--code">
+              <span class="code-chip" aria-hidden="true">&lt;</span><span
+                class="typing-target" id="typingTarget" data-strings='["I am Devloper.", "UI/UX Designer.", "Data Scince.", "Software Architect.","WordPress Expert."]'
+              ></span><span class="typing-caret" aria-hidden="true"></span><span class="code-chip" aria-hidden="true">/&gt;</span>
+            </span>
+          </h1>
+
+          <p class="hero-desc" data-reveal="fade-up">
+            I design and build web products end-to-end — from the first pixel to the
+            deployed code — with an obsession for clarity, motion, and craft. Currently
+            focused on clean architecture, thoughtful interaction design, and interfaces
+            that stay out of the user's way.
+          </p>
+
+          <div class="hero-actions" data-reveal="fade-up">
+            <a href="assets/cv.pdf" class="btn btn-primary magnetic" download>
+              <span>Download Resume</span>
+              <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V3"/><path d="m7 10 5 5 5-5"/><path d="M20 21H4"/></svg>
+            </a>
+
+            <a href="#projects" class="btn btn-ghost magnetic">
+              <span>View Projects</span>
+              <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+
+            <a href="#contact" class="btn btn-text magnetic">
+              <span>Contact</span>
+            </a>
+          </div>
+
+          <div class="hero-socials" data-reveal="fade-up" aria-label="Social links">
+            <a href="https://github.com/Devloper-ANIK" target="_blank" rel="noopener noreferrer" class="social-link magnetic" aria-label="GitHub">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.79-.25.79-.55 0-.27-.01-1.16-.02-2.1-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.7 5.4-5.27 5.69.42.36.78 1.08.78 2.17 0 1.57-.01 2.83-.01 3.22 0 .3.21.66.8.55A10.52 10.52 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/anik-pal-79b713413/" target="_blank" rel="noopener noreferrer" class="social-link magnetic" aria-label="LinkedIn">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
+            </a>
+            <a href="mailto:pal642672@gmail.com" class="social-link magnetic" aria-label="Email">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2.5"/><path d="m22 6.5-10 7L2 6.5"/></svg>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right column: floating glass status cards -->
+        <div class="hero-aside" aria-hidden="false">
+
+          <div class="glass-card glass-card--main float-slow" data-reveal="scale-reveal">
+            <div class="glass-card-row">
+              <span class="status-pulse" aria-hidden="true"></span>
+              <span>Available for freelance work</span>
+            </div>
+            <div class="glass-card-divider"></div>
+            <div class="glass-card-row glass-card-row--muted">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Based in India · West Bengal</span>
+            </div>
+          </div>
+
+          <div class="glass-card glass-card--stack float-medium" data-reveal="scale-reveal">
+            <span class="glass-card-label">Core Stack</span>
+            <div class="stack-tags">
+              <span class="stack-tag">Java</span>
+              <span class="stack-tag">C++</span>
+              <span class="stack-tag">MYSQL</span>
+              <span class="stack-tag">Python</span>
+            </div>
+          </div>
+
+          <div class="glass-card glass-card--metric float-fast" data-reveal="scale-reveal">
+            <span class="metric-number" data-count-to="6">0</span>
+            <span class="glass-card-label">Shipped Projects</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Scroll indicator -->
+      <a href="#about" class="scroll-indicator magnetic" aria-label="Scroll to About section">
+        <span class="scroll-indicator-text">Scroll</span>
+        <span class="scroll-indicator-line"><span class="scroll-indicator-dot"></span></span>
+      </a>
+
+    </section>
+
+    <!--ABOUT-->
+    <section class="about" id="about">
+      <div class="container about-grid">
+
+        <div class="about-visual" data-reveal="fade-right">
+          <div class="about-photo-frame float-slow">
+            <div class="about-photo-glow" aria-hidden="true"></div>
+            <div class="about-photo-ring" aria-hidden="true"></div>
+<!-- Replace src below with your real headshot. Recommended: a vertical portrait crop (e.g. 960x1120px, JPG/WebP, <300KB) -->
+            <img
+              class="about-photo"
+              src="assets/images/1.JPEG"
+              alt="Portrait of Anik Pal, Frontend Developer & UI Engineer"
+              width="480"
+              height="560"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="about-photo-badge">
+              <span class="status-pulse" aria-hidden="true"></span>
+              <span>Available for work</span>
+            </div>
+          </div>
+
+          <div class="about-frame">
+            <div class="about-frame-glow" aria-hidden="true"></div>
+            <div class="about-code-card">
+              <div class="code-card-head">
+                <span class="code-dot code-dot--red"></span>
+                <span class="code-dot code-dot--yellow"></span>
+                <span class="code-dot code-dot--green"></span>
+                <span class="code-card-title">anik.js</span>
+              </div>
+              <pre class="code-card-body"><code><span class="tok-kw">const</span> <span class="tok-var">anik</span> = {
+  <span class="tok-prop">role</span>: <span class="tok-str">"Frontend Developer"</span>,
+  <span class="tok-prop">focus</span>: [<span class="tok-str">"clean code"</span>, <span class="tok-str">"UI craft"</span>],
+  <span class="tok-prop">mindset</span>: <span class="tok-str">"lifelong learner"</span>,
+  <span class="tok-prop">debug</span>: () => <span class="tok-str">"patience + curiosity"</span>,
+};</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-content">
+          <p class="section-eyebrow" data-reveal="fade-up">
+            <span class="eyebrow-dot" aria-hidden="true"></span> About
+          </p>
+          <h2 class="section-title" data-reveal="fade-up">
+            I build things by understanding <span class="text-accent">why</span> they need to exist.
+          </h2>
+          <p class="about-text" data-reveal="fade-up">
+            I'm Anik Pal, a frontend developer and UI designer who enjoys the full
+            arc of building a product — sketching the interface, structuring the
+            code behind it, and chasing down the small details that make an
+            experience feel finished. I care about clean architecture as much as
+            clean visuals, because the two are never really separate.
+          </p>
+          <p class="about-text" data-reveal="fade-up">
+            Most of what I know came from breaking things and figuring out why —
+            debugging is where I actually learn a system, not just where I fix it.
+            That habit of staying curious is what keeps me picking up new tools,
+            languages, and ways of thinking about problems.
+          </p>
+
+          <div class="about-traits" data-reveal="fade-up">
+            <div class="trait-chip">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              Clean Code
+            </div>
+            <div class="trait-chip">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              Problem Solving
+            </div>
+            <div class="trait-chip">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
+              Debugging
+            </div>
+            <div class="trait-chip">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8h18"/><circle cx="6" cy="6" r="0.5"/><circle cx="8" cy="6" r="0.5"/><circle cx="10" cy="6" r="0.5"/><rect x="6" y="10" width="5" height="5" rx="1"/><path d="M13 11h5"/><path d="M13 13h4"/><path d="M13 15h3"/><path d="M16 17l2.5 4 .8-2.2 2.2-.8-4-2.5z"/></svg>
+              UI/UX Design
+            </div>
+            <div class="trait-chip">
+              <svg width="24" height="24" viewBox="0 0 24 24"
+fill="none" stroke="currentColor"stroke-width="2" stroke-linecap="round"stroke-linejoin="round"><rect x="3" y="3" width="6" height="4" rx="1"/><rect x="15" y="3" width="6" height="4" rx="1"/><rect x="9" y="17" width="6" height="4" rx="1"/><path d="M6 7v5"/><path d="M18 7v5"/><path d="M6 12h12"/><path d="M12 12v5"/></svg>
+              Software Architecture
+            </div>
+            <div class="trait-chip">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v4"/><path d="m6.8 6.8-2.8-2.8"/><path d="M2 12h4"/><path d="m6.8 17.2-2.8 2.8"/><path d="M12 18v4"/><path d="m17.2 17.2 2.8 2.8"/><path d="M18 12h4"/><path d="m17.2 6.8 2.8-2.8"/></svg>
+              Creativity
+            </div>
+            <div class="trait-chip">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6.5a5.5 5.5 0 0 1 5.5 5.5c0 1.5-.5 2.5-1.5 3.5s-1.5 2-1.5 3.5h-5c0-1.5-.5-2.5-1.5-3.5S6.5 13.5 6.5 12A5.5 5.5 0 0 1 12 6.5Z"/><path d="M9.5 21.5h5"/></svg>
+              Continuous Learning
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!--EDUCATION -->
+    <section class="education" id="education">
+      <div class="container">
+        <p class="section-eyebrow" data-reveal="fade-up">
+          <span class="eyebrow-dot" aria-hidden="true"></span> Education
+        </p>
+        <h2 class="section-title" data-reveal="fade-up">The path that got me here.</h2>
+
+        <div class="timeline">
+          <div class="timeline-line" aria-hidden="true"><span class="timeline-line-fill"></span></div>
+
+          <div class="timeline-item" data-reveal="fade-up">
+            <div class="timeline-marker"><span class="timeline-marker-dot"></span></div>
+            <div class="timeline-card">
+              <span class="timeline-date">2026 — Present</span>
+              <h3 class="timeline-title">Current Study - Class Xi (Arts)</h3>
+              <p class="timeline-org">Dhaniakhali Mahamaya Vidyamandir</p>
+              <p class="timeline-desc">
+               Currently pursuing higher secondary 
+               education with a focus on building a strong 
+               academic foundation alongside technical 
+               skill development.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item" data-reveal="fade-up">
+            <div class="timeline-marker"><span class="timeline-marker-dot"></span></div>
+            <div class="timeline-card">
+              <span class="timeline-date">2025 - 2026</span>
+              <h3 class="timeline-title">Secondary Education (Madhyamik)</h3>
+              <p class="timeline-org">Dhaniakhali Mahamaya Vidyamandir</p>
+              <p class="timeline-desc">
+                Completed secondary education,
+                building essential academic skills and discovering 
+                a deep passion for technology and computer science.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item" data-reveal="fade-up">
+            <div class="timeline-marker"><span class="timeline-marker-dot"></span></div>
+            <div class="timeline-card">
+              <span class="timeline-date">On-going  (2026)</span>
+              <h3 class="timeline-title">Advance Diploma in Computer Application (ADCA)</h3>
+              <p class="timeline-org"> SHIKSHA AALAY INSTITUTE OF SKILL DEVLOPMENT FOUNDATION</p>
+              <p class="timeline-desc">
+                The Advance Diploma in Computer Application (ADCA) is a 
+                comprehensive one-year program designed to develop 
+                professional computer skills for academic, office, and IT careers.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item" data-reveal="fade-up">
+            <div class="timeline-marker"><span class="timeline-marker-dot"></span></div>
+            <div class="timeline-card">
+              <span class="timeline-date">2021 - 2025</span>
+              <h3 class="timeline-title">BASIC , DIPLOMA & DESKTOP PUBLISHING</h3>
+              <p class="timeline-org">Dhaniakhali Mahamaya Vidyamandir/p>
+              <p class="timeline-desc">
+                Completed secondary education,
+                building essential academic skills and discovering 
+                a deep passion for technology and computer science.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!--SKILLS-->
+<section class="skills" id="skills">
+      <div class="container">
+        <p class="section-eyebrow" data-reveal="fade-up">
+          <span class="eyebrow-dot" aria-hidden="true"></span> Skills
+        </p>
+        <h2 class="section-title" data-reveal="fade-up">Tools I reach for, and trust.</h2>
+        <p class="section-subtitle" data-reveal="fade-up">
+          A working toolkit spanning languages, frameworks, design software, and
+          the habits that hold it all together.
+        </p>
+
+        <div class="skills-grid" id="skillsGrid">
+          <div class="skill-card" data-reveal="scale-reveal"><img class="skill-icon" src="assets/images/l16.png" alt="HTML5" loading="lazy"><span class="skill-name">HTML</span></div>
+          <div class="skill-card" data-reveal="scale-reveal"><img class="skill-icon" src="assets/images/l6.png" alt="CSS3" loading="lazy" width="28" height="28" /><span class="skill-name">CSS</span></div>
+          <div class="skill-card" data-reveal="scale-reveal"><img class="skill-icon" src="assets/images/l5.png" alt="JavaScript" loading="lazy" width="28" height="28" /><span class="skill-name">JavaScript</span></div>
+          <div class="skill-card" data-reveal="scale-reveal"><img class="skill-icon" src="assets/images/l7.png" alt="Java" loading="lazy" width="28" height="28" /><span class="skill-name">Java</span></div>
+          <div class="skill-card" data-reveal="scale-reveal"><img class="skill-icon" src="assets/images/l11.png" alt="Python" loading="lazy" width="28" height="28" /><span class="skill-name">Python</span></div>
+          <div class="skill-card" data-reveal="scale-reveal"><img class="skill-icon" src="assets/images/l10.png" alt="C" loading="lazy" width="28" height="28" /><span class="skill-name">C</span></div>
+          <div class="skill-card" data-reveal="scale-reveal"><img class="skill-icon" src="assets/images/l9.png" alt="C++" loading="lazy" width="28" height="28" /><span class="skill-name">C++</span></div>
+          <div class="skill-card" data-reveal="scale-reveal"><img class="skill-icon" src="assets/images/l8.png" alt="PHP" loading="lazy" width="28" height="28" /><span class="skill-name">PHP</span></div>
+          <div class="skill-card" data-reveal="scale-reveal"><img class="skill-icon" src="assets/images/l12.png" alt="Flutter" loading="lazy" width="28" height="28" /><span class="skill-name">Flutter</span></div>
+          <div class="skill-card" data-reveal="scale-reveal"><img class="skill-icon" src="assets/images/l13.png" alt="Docker" loading="lazy" width="28" height="28" /><span class="skill-name">Docker</span></div>
+          <div class="skill-card" data-reveal="scale-reveal"><img class="skill-icon" src="assets/images/l17.png" alt="MongoDB" loading="lazy" width="28" height="28" /><span class="skill-name">MongoDB</span></div>
+          <div class="skill-card" data-reveal="scale-reveal"><img class="skill-icon" src="assets/images/l14.png" alt="MySQL" loading="lazy" width="28" height="28" /><span class="skill-name">MySQL</span></div>
+          <div class="skill-card" data-reveal="scale-reveal"><img class="skill-icon" src="assets/images/L1.WEBP" alt="Photoshop" loading="lazy" width="28" height="28" /><span class="skill-name">Photoshop</span></div>
+          <div class="skill-card" data-reveal="scale-reveal"><img class="skill-icon" src="assets/images/l2.png" alt="Illustrator" loading="lazy" width="28" height="28" /><span class="skill-name">Illustrator</span></div>
+          <div class="skill-card" data-reveal="scale-reveal"><img class="skill-icon" src="assets/images/l4.png" alt="Figma" loading="lazy" width="28" height="28" /><span class="skill-name">Figma</span></div>
+          <div class="skill-card" data-reveal="scale-reveal"><img class="skill-icon" src="assets/images/l15.png" alt="Git" loading="lazy" width="28" height="28" /><span class="skill-name">Git</span></div>
+          <div class="skill-card" data-reveal="scale-reveal"><img class="skill-icon" src="assets/images/l18.png" alt="GitHub" loading="lazy" width="28" height="28" /><span class="skill-name">GitHub</span></div>
+          <div class="skill-card" data-reveal="scale-reveal"><span class="skill-icon skill-icon--emoji">📐</span><span class="skill-name">Responsive Design</span></div>
+          <div class="skill-card" data-reveal="scale-reveal"><span class="skill-icon skill-icon--emoji">🧩</span><span class="skill-name">Problem Solving</span></div>
+          <div class="skill-card" data-reveal="scale-reveal"><span class="skill-icon skill-icon--emoji">🔍</span><span class="skill-name">Debugging</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!--SERVICES-->
+    <section class="services" id="services">
+      <div class="container">
+        <p class="section-eyebrow" data-reveal="fade-up">
+          <span class="eyebrow-dot" aria-hidden="true"></span> Services
+        </p>
+        <h2 class="section-title" data-reveal="fade-up">What I can help you build.</h2>
+
+        <div class="services-grid">
+          <div class="service-card" data-reveal="fade-up">
+            <div class="service-index">01</div>
+            <div class="service-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+            </div>
+            <h3 class="service-title">Frontend Development</h3>
+            <p class="service-desc">Responsive, accessible interfaces built with clean semantic markup and modern CSS — no framework bloat where it isn't needed.</p>
+          </div>
+
+          <div class="service-card" data-reveal="fade-up">
+            <div class="service-index">02</div>
+            <div class="service-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19c-4.3 0-7.5-1.79-7.5-4V7c0-2.21 3.2-4 7.5-4s7.5 1.79 7.5 4v8c0 2.21-3.2 4-7.5 4Z"/><path d="M4.5 11c0 2.21 3.2 4 7.5 4s7.5-1.79 7.5-4"/></svg>
+            </div>
+            <h3 class="service-title">Full-Stack Web Apps</h3>
+            <p class="service-desc">End-to-end builds — database, backend logic, and the interface on top — for tools like management systems and dashboards.</p>
+          </div>
+
+          <div class="service-card" data-reveal="fade-up">
+            <div class="service-index">03</div>
+            <div class="service-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+            </div>
+            <h3 class="service-title">UI/UX Design</h3>
+            <p class="service-desc">Interface design in Figma with a focus on hierarchy, spacing, and interaction flow — designed to be built, not just admired.</p>
+          </div>
+
+          <div class="service-card" data-reveal="fade-up">
+            <div class="service-index">04</div>
+            <div class="service-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <h3 class="service-title">WordPress Sites</h3>
+            <p class="service-desc">Business-ready WordPress builds — custom themes and layouts tuned for speed, structure, and easy content updates.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   <!-- ==========================================================================
+     15. PROJECTS — Editorial Bento Layout
+     ========================================================================== -->
+<section class="projects" id="projects">
+  <!-- Ambient background glow -->
+  <div class="projects-ambient" aria-hidden="true"></div>
+
+  <div class="container">
+    <!-- Section header -->
+    <div class="projects-header" data-reveal="fade-up">
+      <span class="projects-header-line" aria-hidden="true"></span>
+      <span class="section-eyebrow">MY WORK</span>
+      <h2 class="section-title">Professional<br>Projects</h2>
+      <p class="section-subtitle">
+        A collection of professional software and web development projects built with modern technologies. Some are completed production-ready applications while others are actively under development.
+      </p>
+      <div class="projects-count">
+        <span>6 Projects</span>
+        <span class="projects-count-divider" aria-hidden="true"></span>
+        <span>1 Completed</span>
+        <span class="projects-count-divider" aria-hidden="true"></span>
+        <span>5 In Progress</span>
+      </div>
+    </div>
+
+    <!-- ============================
+         BENTO GRID
+         ============================ -->
+    <div class="projects-bento">
+
+      <!-- ── FEATURED: Personal Portfolio (Completed) ── -->
+      <article class="project-card--featured magnetic" data-reveal="scale-reveal" data-project="Personal Portfolio">
+        <div class="project-featured-media">
+          <img
+            src="assets/images/12.png"
+            alt="Personal Portfolio dashboard showing real-time file synchronization across devices"
+            loading="lazy"
+            onerror="this.style.display='none'; this.nextElementSibling && (this.nextElementSibling.style.display='flex')"
+          >
+          <div class="project-dev-thumb-placeholder" style="display:none; position:absolute; inset:0; align-items:center; justify-content:center; color:rgba(255,255,255,0.1);">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+          </div>
+          <span class="project-featured-badge">
+            <span class="badge-dot" aria-hidden="true"></span>
+            Completed
+          </span>
+        </div>
+        <div class="project-featured-body">
+          <h3 class="project-featured-title">Personal Portfolio</h3>
+          <p class="project-featured-desc">
+            A modern, responsive portfolio website showcasing my work and skills as a web developer.
+          </p>
+          <div class="project-featured-stack">
+            <span class="stack-tag">HTML5</span>
+            <span class="stack-tag">CSS3</span>
+            <span class="stack-tag">JavaScript</span>
+            <span class="stack-tag">React</span>
+          </div>
+          <div class="project-featured-actions">
+            <a href="#" class="btn btn-primary magnetic" aria-label="View live demo of Personal Portfolio">
+              <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Live Demo
+            </a>
+            <a href="https://github.com/Devloper-ANIK" class="btn btn-ghost magnetic" aria-label="View Personal Portfolio on GitHub">
+              <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── DEV 1: FinTrack Dashboard — 85% ── -->
+      <article class="project-card--dev" data-reveal="fade-up" data-project="fintrack">
+        <div class="project-dev-thumb">
+          <img
+            src="assets/projects/project2.jpg"
+            alt="FinTrack Dashboard financial analytics interface"
+            loading="lazy"
+            onerror="this.style.display='none'"
+          >
+          <div class="project-dev-thumb-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+        </div>
+        <div class="project-dev-body">
+          <div class="project-dev-header">
+            <h3 class="project-dev-title">FinTrack Dashboard</h3>
+            <span class="project-dev-status">
+              <span class="project-dev-status-dot" aria-hidden="true"></span>
+              20%
+            </span>
+          </div>
+          <p class="project-dev-desc">Real-time financial analytics with interactive charts, automated reporting, and multi-currency support.</p>
+          <div class="project-dev-stack">
+            <span class="stack-tag">JavaScript</span>
+            <span class="stack-tag">PHP</span>
+            <span class="stack-tag">MySQL</span>
+            <span class="stack-tag">Bootstrap</span>
+          </div>
+        </div>
+        <span class="project-dev-pct" aria-label="20% complete">20%</span>
+        <div class="project-dev-progress-track" aria-hidden="true">
+          <div class="project-dev-progress-fill" data-progress="20" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </article>
+
+      <!-- ── DEV 2: ShopVerse Platform — 5% ── -->
+      <article class="project-card--dev" data-reveal="fade-up" data-project="shopverse">
+        <div class="project-dev-thumb">
+          <img
+            src="assets/projects/project3.jpg"
+            alt="ShopVerse e-commerce product listing page"
+            loading="lazy"
+            onerror="this.style.display='none'"
+          >
+          <div class="project-dev-thumb-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+          </div>
+        </div>
+        <div class="project-dev-body">
+          <div class="project-dev-header">
+            <h3 class="project-dev-title">ShopVerse Platform</h3>
+            <span class="project-dev-status">
+              <span class="project-dev-status-dot" aria-hidden="true"></span>
+              5%
+            </span>
+          </div>
+          <p class="project-dev-desc">Full-featured e-commerce with Stripe payments, inventory tracking, and admin analytics panel.</p>
+          <div class="project-dev-stack">
+            <span class="stack-tag">Java</span>
+            <span class="stack-tag">SQL</span>
+            <span class="stack-tag">HTML</span>
+            <span class="stack-tag">CSS</span>
+            <span class="stack-tag">JavaScript</span>
+          </div>
+        </div>
+        <span class="project-dev-pct" aria-label="5% complete">5%</span>
+        <div class="project-dev-progress-track" aria-hidden="true">
+          <div class="project-dev-progress-fill" data-progress="5" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </article>
+
+      <!-- ── DEV 3: TaskFlow Pro — 15% ── -->
+      <article class="project-card--dev" data-reveal="fade-up" data-project="taskflow">
+        <div class="project-dev-thumb">
+          <img
+            src="assets/projects/project4.jpg"
+            alt="TaskFlow Pro kanban board project management interface"
+            loading="lazy"
+            onerror="this.style.display='none'"
+          >
+          <div class="project-dev-thumb-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+        </div>
+        <div class="project-dev-body">
+          <div class="project-dev-header">
+            <h3 class="project-dev-title">TaskFlow Pro</h3>
+            <span class="project-dev-status">
+              <span class="project-dev-status-dot" aria-hidden="true"></span>
+              15%
+            </span>
+          </div>
+          <p class="project-dev-desc">Collaborative project management with Kanban boards, Gantt charts, and automated workflow triggers.</p>
+          <div class="project-dev-stack">
+            <span class="stack-tag">React</span>
+            <span class="stack-tag">Node.js</span>
+            <span class="stack-tag">MySQL</span>
+            <span class="stack-tag">Tailwind</span>
+          </div>
+        </div>
+        <span class="project-dev-pct" aria-label="15% complete">15%</span>
+        <div class="project-dev-progress-track" aria-hidden="true">
+          <div class="project-dev-progress-fill" data-progress="15" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </article>
+
+      <!-- ── DEV 4: Student Management System — 30% ── -->
+      <article class="project-card--dev" data-reveal="fade-up" data-project="student-management">
+        <div class="project-dev-thumb">
+          <img
+            src="assets/projects/project5.jpg"
+            alt="Student Management System interface"
+            loading="lazy"
+            onerror="this.style.display='none'"
+          >
+          <div class="project-dev-thumb-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          </div>
+        </div>
+        <div class="project-dev-body">
+          <div class="project-dev-header">
+            <h3 class="project-dev-title">Student Management System</h3>
+            <span class="project-dev-status">
+              <span class="project-dev-status-dot" aria-hidden="true"></span>
+              40%
+            </span>
+          </div>
+          <p class="project-dev-desc">Student management platform with enrollment, grades, attendance, and communication tools.</p>
+          <div class="project-dev-stack">
+            <span class="stack-tag">Java</span>
+            <span class="stack-tag">React</span>
+            <span class="stack-tag">SQL</span>
+            <span class="stack-tag">Node.js</span>
+          </div>
+        </div>
+        <span class="project-dev-pct" aria-label="40% complete">40%</span>
+        <div class="project-dev-progress-track" aria-hidden="true">
+          <div class="project-dev-progress-fill" data-progress="40" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </article>
+
+      <!-- ── DEV 5: Mobile Clone System — 25% ── -->
+      <article class="project-card--dev" data-reveal="fade-up" data-project="dataviz">
+        <div class="project-dev-thumb">
+          <img
+            src="assets/projects/project6.jpg"
+            alt="Mobile Clone System interactive chart builder interface"
+            loading="lazy"
+            onerror="this.style.display='none'"
+          >
+          <div class="project-dev-thumb-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+        </div>
+        <div class="project-dev-body">
+          <div class="project-dev-header">
+            <h3 class="project-dev-title">Mobile Clone System</h3>
+            <span class="project-dev-status">
+              <span class="project-dev-status-dot" aria-hidden="true"></span>
+              25%
+            </span>
+          </div>
+          <p class="project-dev-desc">A professional mobile cloning system that enables fast and secure transfer of contacts, photos, videos, apps, and documents between Android devices with a simple and intuitive interface.</p>
+          <div class="project-dev-stack">
+            <span class="stack-tag">JavaScript</span>
+            <span class="stack-tag">PHP</span>
+            <span class="stack-tag">c++,c#</span>
+            <span class="stack-tag">MySQL</span>
+          </div>
+        </div>
+        <span class="project-dev-pct" aria-label="25% complete">25%</span>
+        <div class="project-dev-progress-track" aria-hidden="true">
+          <div class="project-dev-progress-fill" data-progress="25" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </article>
+
+    </div><!-- /.projects-bento -->
+  </div><!-- /.container -->
+
+  <!-- ============================
+       PROJECT DETAIL MODAL
+       ============================ -->
+  <div class="project-modal" id="projectModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Project details">
+    <div class="project-modal-backdrop" data-close-project-modal></div>
+    <div class="project-modal-panel">
+      <button class="project-modal-close" data-close-project-modal aria-label="Close project details">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="project-modal-media" id="modalMedia">
+        <!-- Populated by JS -->
+      </div>
+      <div class="project-modal-body">
+        <div id="modalBadge"></div>
+        <h3 class="project-modal-title" id="modalTitle"></h3>
+        <p class="project-modal-desc" id="modalDesc"></p>
+        <div class="project-modal-stack" id="modalStack"></div>
+        <div class="project-modal-meta" id="modalMeta"></div>
+        <div class="project-modal-actions" id="modalActions"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!--CERTIFICATES-->
+    <section class="certificates" id="certificates">
+      <div class="container">
+        <p class="section-eyebrow" data-reveal="fade-up">
+          <span class="eyebrow-dot" aria-hidden="true"></span> Certificates
+        </p>
+        <h2 class="section-title" data-reveal="fade-up">Credentials along the way.</h2>
+
+        <div class="certificates-grid" id="certificatesGrid">
+          <button class="certificate-card magnetic" data-reveal="scale-reveal" data-cert-index="0" aria-label="Open certificate: Web Development Fundamentals">
+            <div class="certificate-thumb">
+              <img src="assets/images/c1.JPEG" alt="Web Development Fundamentals certificate" loading="lazy" />
+              <span class="certificate-thumb-index">JavaScript Programming</span>
+            </div>
+          </button>
+          <button class="certificate-card magnetic" data-reveal="scale-reveal" data-cert-index="1" aria-label="Open certificate: JavaScript Essentials">
+            <div class="certificate-thumb">
+              <img src="assets/images/c2.JPEG" alt="JavaScript Essentials certificate" loading="lazy" />
+              <span class="certificate-thumb-index">Web Design WordPress</span>
+            </div>
+          </button>
+          <button class="certificate-card magnetic" data-reveal="scale-reveal" data-cert-index="2" aria-label="Open certificate: Responsive Web Design">
+            <div class="certificate-thumb">
+              <img src="assets/images/c3.JPG" alt="Responsive Web Design certificate" loading="lazy" />
+              <span class="certificate-thumb-index">Graphic Design</span>
+            </div>
+          </button>
+          <button class="certificate-card magnetic" data-reveal="scale-reveal" data-cert-index="3" aria-label="Open certificate: UI/UX Design with Figma">
+            <div class="certificate-thumb">
+              <img src="assets/images/c4.PNG" alt="UI/UX Design with Figma certificate" loading="lazy" />
+              <span class="certificate-thumb-index">C++ Software Backend Devloped</span>
+            </div>
+          </button>
+          <button class="certificate-card magnetic" data-reveal="scale-reveal" data-cert-index="4" aria-label="Open certificate: Python Programming">
+            <div class="certificate-thumb">
+              <img src="assets/images/c5.PNG" alt="Python Programming certificate" loading="lazy" />
+              <span class="certificate-thumb-index">Basic Course {CITA}</span>
+            </div>
+          </button>
+          <button class="certificate-card magnetic" data-reveal="scale-reveal" data-cert-index="5" aria-label="Open certificate: Database Management with MySQL">
+            <div class="certificate-thumb">
+              <img src="assets/images/c6.PNG" alt="Database Management with MySQL certificate" loading="lazy" />
+              <span class="certificate-thumb-index">DDTP Course {DDTP}</span>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Fullscreen certificate lightbox -->
+      <div class="lightbox" id="certLightbox" aria-hidden="true">
+        <div class="lightbox-backdrop" data-close-lightbox></div>
+        <button class="lightbox-close" data-close-lightbox aria-label="Close">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous certificate">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+        </button>
+        <div class="lightbox-stage">
+          <div class="lightbox-cert" id="lightboxCert">
+            <img class="lightbox-cert-img" id="lightboxImg" src="" alt="" />
+            <span class="lightbox-cert-index" id="lightboxIndex">01</span>
+            <span class="lightbox-cert-name" id="lightboxName">Certificate Name</span>
+          </div>
+        </div>
+        <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next certificate">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <!--STATISTICS-->
+    <section class="statistics" id="statistics">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item" data-reveal="fade-up">
+            <span class="stat-number" data-count-to="6">0</span>
+            <span class="stat-plus">+</span>
+            <span class="stat-label">Projects Completed</span>
+          </div>
+          <div class="stat-item" data-reveal="fade-up">
+            <span class="stat-number" data-count-to="20">0</span>
+            <span class="stat-plus">+</span>
+            <span class="stat-label">Technologies Used</span>
+          </div>
+          <div class="stat-item" data-reveal="fade-up">
+            <span class="stat-number" data-count-to="6">0</span>
+            <span class="stat-plus"></span>
+            <span class="stat-label">Certifications Earned</span>
+          </div>
+          <div class="stat-item" data-reveal="fade-up">
+            <span class="stat-number" data-count-to="4">0</span>
+            <span class="stat-plus">+</span>
+            <span class="stat-label">Years Learning &amp; Building</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--CONTACT-->
+    <section class="contact" id="contact">
+      <div class="container contact-grid">
+
+        <div class="contact-intro">
+          <p class="section-eyebrow" data-reveal="fade-up">
+            <span class="eyebrow-dot" aria-hidden="true"></span> Contact
+          </p>
+          <h2 class="section-title" data-reveal="fade-up">Let's build something worth remembering.</h2>
+          <p class="about-text" data-reveal="fade-up">
+            Have a project in mind, or just want to talk shop? My inbox is open —
+            I try to reply within a day or two.
+          </p>
+
+          <div class="contact-details" data-reveal="fade-up">
+            <div class="contact-detail-row">
+              <div class="contact-detail-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2.5"/><path d="m22 6.5-10 7L2 6.5"/></svg>
+              </div>
+              <div class="contact-detail-text">
+                <span class="contact-detail-label">Email</span>
+                <span class="contact-detail-value" id="emailValue">pal642672@gmail.com</span>
+              </div>
+              <button class="copy-email-btn magnetic" id="copyEmailBtn" aria-label="Copy email address">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                <span id="copyEmailLabel">Copy</span>
+              </button>
+            </div>
+
+            <div class="contact-detail-row">
+              <div class="contact-detail-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+              </div>
+              <div class="contact-detail-text">
+                <span class="contact-detail-label">Phone</span>
+                <span class="contact-detail-value">+91 83274 64988</span>
+              </div>
+            </div>
+
+            <div class="contact-detail-row">
+              <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="contact-social-link magnetic">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.79-.25.79-.55 0-.27-.01-1.16-.02-2.1-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.7 5.4-5.27 5.69.42.36.78 1.08.78 2.17 0 1.57-.01 2.83-.01 3.22 0 .3.21.66.8.55A10.52 10.52 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/></svg>
+                <span>GitHub</span>
+              </a>
+              <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" class="contact-social-link magnetic">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
+                <span>LinkedIn</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm" data-reveal="fade-left" novalidate>
+          <div class="form-row">
+            <label class="form-label" for="formName">Name</label>
+            <input class="form-input" type="text" id="formName" name="name" placeholder="Your name" required />
+          </div>
+          <div class="form-row">
+            <label class="form-label" for="formPhone">Subject</label>
+            <input class="form-input" type="tel" id="formPhone" name="phone" placeholder="Your Subject" required />
+          </div>
+          <div class="form-row">
+            <label class="form-label" for="formEmail">Email</label>
+            <input class="form-input" type="email" id="formEmail" name="email" placeholder="you@example.com" required />
+          </div>
+          <div class="form-row">
+            <label class="form-label" for="formMessage">Message</label>
+            <textarea class="form-input form-textarea" id="formMessage" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary magnetic form-submit">
+            <span id="formSubmitLabel">Send Message</span>
+            <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+          </button>
+          <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="logo-mark">
+        <img src="assets/images/11.jpeg" alt="Anik Pal">
+    </span>
+          <p class="footer-tagline">Building clean, thoughtful interfaces — one project at a time.</p>
+        </div>
+
+        <nav class="footer-links" aria-label="Footer">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#certificates">Certificates</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="footer-socials">
+          <a href="https://github.com/Devloper-ANIK" target="_blank" rel="noopener noreferrer" class="social-link magnetic" aria-label="GitHub">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.79-.25.79-.55 0-.27-.01-1.16-.02-2.1-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.7 5.4-5.27 5.69.42.36.78 1.08.78 2.17 0 1.57-.01 2.83-.01 3.22 0 .3.21.66.8.55A10.52 10.52 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/anik-pal-79b713413/" target="_blank" rel="noopener noreferrer" class="social-link magnetic" aria-label="LinkedIn">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
+          </a>
+          <a href="mailto:pal642672@gmail.com" class="social-link magnetic" aria-label="Email">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2.5"/><path d="m22 6.5-10 7L2 6.5"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="footerYear">2026</span> Anik Pal. All rights reserved.</p>
+        <p>Designed &amp; built by ANIK PAL .</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating back-to-top button -->
+  <button class="back-to-top magnetic" id="backToTop" aria-label="Back to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 15-6-6 6-6"/></svg>
+  </button>
+
+  <!-- LIBRARIES / EmailJS Library -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+
+  <!-- App -->
+  <script src="script.js"></script>
+</body>
+</html>
